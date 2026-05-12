@@ -1,0 +1,30 @@
+{% for message in messages %}
+    <div
+        class="card mb-3 mx-auto"
+        style="max-width:700px;
+            {% if message.role == 'assistant' %}
+                background-color:#f8bbd0;
+            {% else %}
+                background-color:white;
+            {% endif %}">
+
+        <div class="card-body">
+            {% if message.role == 'user' %}
+                {% if request.user.profile.alias %}
+                    <strong>{{ request.user.profile.alias|title }}</strong>
+                {% else %}
+                    <strong>{{ request.user.username|title }}</strong>
+                {% endif %}
+            {% else %}
+                🤖 <strong>Assistant</strong>
+            {% endif %}
+
+            <p class="mt-2 mb-2">{{ message.content }}</p>
+
+            <p class="text-muted small mb-0">{{ message.created_at|date:"H:i" }}</p>
+        </div>
+    </div>
+
+{% empty %}
+    <p>No hay mensajes todavía</p>
+{% endfor %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body style="background-color:#fce7f3">
+    <div class="container mt-4">
+        <h1 class="text-center text-dark">CHAT IA</h1>
+        <div class="text-end">
+            <a href="{% url 'help' %}" class="btn">INFO ℹ️</a>
+        </div>
+        <p class="text-center">¡Hola <strong>{{ user.username|title }}</strong>!</p>
+        <a href="{% url 'profile' %}" class="btn mt-3" style="background-color:#d63384;color:white">
+            Perfil
+        </a>
+        <br><br>
+
+        <a href="{% url 'create_conversation' %}" class="btn mb-3" style="background-color:#b57edc;color:white">
+            Nueva conversación
+        </a>
+
+        <h2>Tus conversaciones:</h2>
+        <div class="card p-3">
+            {% for conversation in conversations %}
+                <div class="mb-2">
+                    <a href="{% url 'rename_conversation' conversation.id %}" class="text-decoration-none">
+                        ✏️
+                    </a>
+                    <a href="{% url 'delete_conversation' conversation.id %}" class="text-decoration-none"
+                    onclick="return confirm('¿Seguro que quieres eliminar la conversacion?')">
+                        🗑️
+                    </a>
+                    <a href="/chat/{{ conversation.id }}" class="text-decoration-none">
+                        {{ conversation.title }}
+                    </a>
+                </div>
+            {% empty %}
+                <p>No tienes conversaciones todavia</p>
+            {% endfor %}
+        </div>
+
+        <form action="/logout/" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn mt-3" style="background-color:#d63384;color:white">
+                Cerrar sesion
+            </button>
+        </form>
+    </div>
+</body>
+</html>

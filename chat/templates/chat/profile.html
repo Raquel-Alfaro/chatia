@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Perfil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body style="background-color:#fce7f3">
+    <div class="container mt-5 text-center">
+        <h1 class="text-center mb-4">Perfil</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            <label class="mb-2">Alias: </label>
+            <input type="text" name="alias" value="{{ profile.alias }}" placeholder="Alias">
+
+            <label class="mb-2">Tema: </label>
+            <select name="theme" style="background-color:white;color:black">
+                <option value="rosa">Rosa</option>
+                <option value="oscuro">Oscuro</option>
+            </select>
+
+            <br>
+            <button type="submit" class="btn mt-3" style="background-color:#d63384;color:white">Guardar</button>
+            <br>
+        </form>
+    </div>
+    <a href="/" class="btn ms-3" style="background-color:#b57edc;color:white">Vovler</a>
+</body>
+</html>
