@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-csr*_64eppac6=4jvqfv8@epa3b*2bcdvsvxrz=z1oy5brs1m4
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "chatia-xp5t.onrender.com",
+    "django-chatia.onrender.com",
     "127.0.0.1",
     "localhost"
 ]
