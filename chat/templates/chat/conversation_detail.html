@@ -6,7 +6,11 @@
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
 </head>
 
-<body style="background-color:#fce7f3">
+<body style="{% if request.user.profile.theme == 'oscuro' %}
+        background-color:black;color:white
+    {% else %}
+        background-color:#fce7f3
+    {% endif %}">
 
     <div class="container mt-4">
         <h1 class="text-center text-dark mb-4">
