@@ -11,7 +11,14 @@
         <div class="text-end">
             <a href="{% url 'help' %}" class="btn">INFO ℹ️</a>
         </div>
-        <p class="text-center">¡Hola <strong>{{ user.username|title }}</strong>!</p>
+        <p class="text-center">
+            ¡Hola
+            {% if request.user.profile.alias %}
+                    <strong>{{ user.profile.alias|title }}</strong>
+            {% else %}
+                    <strong>{{ user.username|title }}</strong>
+            {% endif %}
+        !</p>
         <a href="{% url 'profile' %}" class="btn mt-3" style="background-color:#d63384;color:white">
             Perfil
         </a>
