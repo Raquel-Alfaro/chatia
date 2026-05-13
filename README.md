@@ -1,3 +1,4 @@
+
 # Entrega convocatoria mayo
 
 CHAT IA - Proyecto Final 2025/2026
@@ -96,4 +97,3 @@ borrar conversaciones y los mensajes del usuario y la IA estan separados.
 * Gestiones extra sobre conversaciones: se pueden eliminar y renombrar sin afectar al resto.
 
 * Perfil de usuario: cada usuario puede elegir el alias con el que se nombrara en las conversaciones.
-
