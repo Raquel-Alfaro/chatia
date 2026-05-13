@@ -30,6 +30,7 @@ def profile(request):
         profile.alias=request.POST["alias"]
         profile.theme=request.POST["theme"]
         profile.save()
+        return redirect("home")
 
     return render(request, "chat/profile.html", {"profile":profile})
 
