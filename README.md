@@ -10,8 +10,7 @@ Aplicacion web tipo chat asistente-IA desarrollada con Python, Django, HTML y Bo
 * Titulación: Ing. Sistemas de Telecomunicacion
 * Cuenta en laboratorios: ralfaro
 * Cuenta URJC: r.alfaro.2017@alumnos.urjc.es
-* Vídeo básico (URL):
-* Vídeo parte opcional (URL):
+* Vídeo (URL): https://youtu.be/bxsqWyaZ3I4
 * Despliegue (URL): https://django-chatia.onrender.com
 * Usuarios y contraseñas: user1/contraseña1
 * Cuenta Admin Site: admin/1234admin
